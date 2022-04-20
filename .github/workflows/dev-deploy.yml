@@ -42,4 +42,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "dist/*"
-          target: "/home/web//web/polymap/prod/front"
+          target: "/home/web/web/polymap/prod/front"
