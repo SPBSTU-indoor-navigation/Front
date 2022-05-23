@@ -35,9 +35,24 @@ export default {
 	metaInfo() {
 		return {
 			title: 'PolyMap',
-			'og:title': 'Маршрут по кампусу СПбПУ',
-			'og:description': this.subject,
-			'og:url': `polymap.ru${this.$route.fullPath}`,
+			meta: [
+				{
+					property: 'og:title',
+					content: `Маршрут по кампусу СПбПУ`,
+				},
+				{
+					property: 'og:description',
+					content: this.subject,
+				},
+				{
+					property: 'og:url',
+					content: `polymap.ru${this.$route.fullPath}`,
+				},
+				{
+					property: 'og:image',
+					content: `${window.location.origin}/ogimage.jpg`,
+				},
+			],
 		};
 	},
 	methods: {},
