@@ -1,4 +1,7 @@
 <template>
+	<metainfo>
+		<template v-slot:title="{ content }">{{ content ? `${content}` : `PolyMap` }}</template>
+	</metainfo>
 	<router-view />
 </template>
 

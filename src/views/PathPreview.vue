@@ -1,18 +1,24 @@
 <template>
 	<div class="abs-full">
 		<div class="card">
-			<h2>С вами поделились маршрутом</h2>
-			<p>Из: {{ data.from }}</p>
-			<p>В: {{ data.to }}</p>
-			<div v-if="data.helloText">
+			<div v-if="data.from">
+				<h2>С вами поделились маршрутом</h2>
+				<p>Из: {{ data.from }}</p>
+				<p>В: {{ data.to }}</p>
+				<div v-if="data.helloText">
+					<hr />
+					<h4>Сообщение автора</h4>
+					<p>{{ data.helloText }}</p>
+				</div>
 				<hr />
-				<h4>Сообщение автора</h4>
-				<p>{{ data.helloText }}</p>
+				<p class="warning">
+					Для просмотра карты вам необходимо приложение PolyMap, сейчас оно доступно только на iOS.
+				</p>
 			</div>
-			<hr />
-			<p class="warning">
-				Для просмотра карты вам необходимо приложение PolyMap, сейчас оно доступно только на iOS.
-			</p>
+			<div v-else class="empty">
+				<h2>Нет данных</h2>
+				<p>Кажется такого маршрута у нас в системе нет, возможно вы ошиблись ссылкой</p>
+			</div>
 		</div>
 		<div class="space"></div>
 	</div>
@@ -26,8 +32,22 @@ export default {
 			data: {},
 		};
 	},
+	metaInfo() {
+		return {
+			title: 'PolyMap',
+			description: 'route',
+			subject: this.subject,
+		};
+	},
 	methods: {},
-	computed: {},
+	computed: {
+		subject() {
+			if (this.data.from && this.data.to) {
+				return `from: ${this.data.from}, to: ${this.data.to}`;
+			}
+			return 'subject';
+		},
+	},
 	async mounted() {
 		let id = this.$route.params.id;
 		if (id) {
@@ -58,6 +78,12 @@ p {
 	text-align: center;
 	font-style: italic;
 	font-size: smaller;
+}
+
+.empty {
+	p {
+		text-align: center;
+	}
 }
 
 .space {
