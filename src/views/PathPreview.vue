@@ -35,8 +35,9 @@ export default {
 	metaInfo() {
 		return {
 			title: 'PolyMap',
-			description: 'route',
-			subject: this.subject,
+			'og:title': 'Маршрут по кампусу СПбПУ',
+			'og:description': this.subject,
+			'og:url': `polymap.ru${this.$route.fullPath}`,
 		};
 	},
 	methods: {},
@@ -118,8 +119,8 @@ p {
 	border-radius: 20px;
 	padding: 20px;
 	max-width: 500px;
-	width: 450px;
 	backdrop-filter: blur(100cm);
+	-webkit-backdrop-filter: blur(5cm);
 
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 80px;
 }
