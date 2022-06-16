@@ -1,5 +1,13 @@
 <template>
-	<h1>Polymap</h1>
+	<metainfo>
+		<meta
+			name="apple-itunes-app"
+			content="app-id=1589702536, app-clip-bundle-id=com.soprachev.polymap.clip, app-clip-display=card"
+		/>
+	</metainfo>
+	<div>
+		<h1>Polymap</h1>
+	</div>
 </template>
 
 <script>
@@ -23,11 +31,6 @@ export default {
 				{
 					property: 'og:image',
 					content: `${window.location.origin}/ogimage.jpg`,
-				},
-				{
-					name: 'apple-itunes-app',
-					content:
-						'app-id=1589702536, app-clip-bundle-id=com.soprachev.polymap.clip, app-clip-display=card',
 				},
 			],
 		};
