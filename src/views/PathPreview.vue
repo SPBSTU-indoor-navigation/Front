@@ -19,7 +19,9 @@
 				</div>
 				<hr />
 				<p class="warning">
-					Для просмотра карты вам необходимо приложение PolyMap, сейчас оно доступно только на iOS.
+					Для просмотра карты вам необходимо приложение
+					<a href="https://apps.apple.com/ru/app/polymap/id1589702536" target="_blank">PolyMap</a>,
+					сейчас оно доступно только на iOS.
 				</p>
 			</div>
 			<div v-else class="empty">
